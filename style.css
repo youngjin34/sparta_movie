@@ -5,7 +5,13 @@ body {
   justify-content: center;
 
   min-height: 100vh;
-  background-color: rgb(244, 253, 253);
+  background: rgb(196, 195, 214);
+  background: linear-gradient(
+    90deg,
+    rgba(196, 195, 214, 1) 0%,
+    rgba(110, 97, 110, 0.925) 35%,
+    rgb(114, 118, 141) 100%
+  );
 }
 
 @media (min-width: 650px) {
@@ -126,7 +132,7 @@ select {
 
   border-radius: 10px;
 
-  margin-top: 30px;
+  margin-top: 25px;
   margin-right: 20px;
 }
 

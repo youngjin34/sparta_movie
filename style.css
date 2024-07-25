@@ -1,9 +1,9 @@
+/* 기본 스타일 */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   min-height: 100vh;
   background: rgb(196, 195, 214);
   background: linear-gradient(
@@ -12,8 +12,10 @@ body {
     rgba(110, 97, 110, 0.925) 35%,
     rgb(114, 118, 141) 100%
   );
+  margin: 0;
 }
 
+/* .App 스타일 */
 @media (min-width: 650px) {
   .App {
     width: 800px;
@@ -26,6 +28,7 @@ body {
   }
 }
 
+/* hr 스타일 */
 hr.hr-1 {
   width: 100%;
   border: 0;
@@ -38,15 +41,16 @@ hr.hr-1 {
   );
 }
 
+/* 헤더 스타일 */
 h1 {
-  font-family: 'Jua';
+  font-family: 'Jua', sans-serif;
   font-size: 48px;
-
   cursor: pointer;
+  text-align: center;
 }
 
 h2 {
-  font-family: 'Jua';
+  font-family: 'Jua', sans-serif;
 }
 
 select {
@@ -54,23 +58,45 @@ select {
   border-radius: 5px;
 }
 
+/* 상단 div 스타일 */
 .top-div {
   display: flex;
   flex-direction: row;
-  justify-items: center;
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .header {
   padding-top: 30px;
   height: 100px;
-  width: 600px;
+  text-align: center;
 }
 
+@media (max-width: 768px) {
+  .top-div {
+    flex-direction: column;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  #searchBtnVisible {
+    position: static;
+    margin-top: 10px;
+  }
+}
+
+/* 카드 리스트 스타일 */
 .card-list {
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
 .movie-card {
@@ -83,7 +109,6 @@ select {
 .movie {
   display: flex;
   flex-direction: column;
-  /* justify-items: center; */
   align-items: center;
   width: calc(33% - 20px);
   box-sizing: border-box;
@@ -91,13 +116,31 @@ select {
 }
 
 .movie img {
-  max-width: 100%; /* 이미지가 카드 너비를 넘지 않도록 설정 */
-  border-radius: 10px; /* 이미지 모서리를 둥글게 */
+  max-width: 100%;
+  border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+  .movie {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .movie {
+    width: calc(100% - 20px);
+  }
+}
+
+/* 검색 컨테이너 스타일 */
 .search-container {
   display: none;
   position: fixed;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  right: 80px;
+  top: 10px;
 }
 
 .search-container.visible {
@@ -107,40 +150,50 @@ select {
 .search {
   display: flex;
   flex-direction: row;
-  position: absolute;
-
-  padding-left: 80px;
-  margin-top: 10px;
+  align-items: center;
+  gap: 10px;
 }
 
 .search label {
-  font-family: 'Jua';
-  font-size: 30px;
+  font-family: 'Jua', sans-serif;
+  font-size: 18px;
   font-weight: bold;
-
-  padding-top: 10px;
-  padding-right: 10px;
-
-  width: 80px;
 }
 
 .search input {
   border: none;
   font-size: 18px;
-  width: 220px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
 
-  border-radius: 10px;
+  transition: width 0.3s ease;
+}
 
-  margin-top: 25px;
-  margin-right: 20px;
+@media (max-width: 768px) {
+  .search input {
+    width: 150px;
+    height: 30px;
+  }
+  .search-container {
+    top: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search input {
+    width: 100px;
+    height: 20px;
+  }
+  .search-container {
+    top: 120px;
+  }
 }
 
 #searchBtnVisible {
-  /* position: absolute; */
   position: fixed;
-  right: 100px;
-  top: 40px;
+  right: 10px;
+  top: 20px;
 }
 
 .button {

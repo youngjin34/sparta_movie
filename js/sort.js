@@ -18,6 +18,10 @@ function displayMovies(sortedMovies) {
     `;
 
     movieCard.appendChild(movieElement);
+
+    movieElement.addEventListener("click", () => {
+      alert(`영화 id: ${movie.id}`);
+    });
   });
 }
 

@@ -49,5 +49,9 @@ searchBtn.addEventListener("click", (e) => {
     <p>${movie.overview}</p>
     `;
     searchMovie.appendChild(filteredMovie);
+
+    filteredMovie.addEventListener("click", () => {
+      alert(`영화 id: ${movie.id}`);
+    });
   });
 });

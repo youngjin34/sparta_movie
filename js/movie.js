@@ -27,6 +27,10 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       `;
 
       movieCard.appendChild(movieElement);
+
+      movieElement.addEventListener("click", () => {
+        alert(`영화 id: ${movie.id}`);
+      });
     });
   })
   .catch(err => console.error(err));

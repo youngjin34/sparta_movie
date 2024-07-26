@@ -20,6 +20,7 @@ searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const value = searchInput.value.toLowerCase();
+
   if (value === "") {
     alert("검색어를 입력해주세요.");
     searchInput.focus();
@@ -38,7 +39,6 @@ searchBtn.addEventListener("click", (e) => {
   }
 
   filteredMovies.forEach(movie => {
-    console.log(movie);
     const filteredMovie = document.createElement("div");
     filteredMovie.classList.add("movie");
 
